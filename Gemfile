@@ -27,7 +27,7 @@ gem 'font-awesome-rails', '~> 4.3'
 gem 'wicked_pdf'
 gem "gritter", "1.2.0"
 gem 'wkhtmltopdf-binary'
-gem 'zip-zip' 
+gem 'rubyzip'
 gem 'axlsx', '~> 2.0'
 gem 'axlsx_rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
