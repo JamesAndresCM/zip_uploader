@@ -1,24 +1,27 @@
-# README
+# Example Zip Uploader
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Descripción 
+- Ejemplo de uploader para archivo zip.
 
-Things you may want to cover:
+### Características
+- Lectura de 2 archivos de texto (diferente formato)
+- Creación de Archivo PDF
+- Creación de Archivo Xlsx
+- Descarga de Archivo
 
-* Ruby version
+### Adicional
+- Utilizar el archivo `/app/files/Archive.zip` en conjunto con los archivos incluidos en el comprimido, los cuales determinan el formato de los archivos `.txt`
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Instalación
+```bash
+bundle install
+rails db:create
+rails db:migrate
+rails server
+```
+### Imágenes
+<img src="https://i.imgur.com/jssllgg.png" />
+<br>
+<img src="https://i.imgur.com/svpJSQe.png" />
+<br>
+<img src="https://i.imgur.com/wMyhLr7.png" />
