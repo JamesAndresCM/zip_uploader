@@ -1,0 +1,38 @@
+<br><br>
+<h2>File Resources</h2>
+<div class="mt-3 card" style="border-margin: 0 auto;
+    display: block;
+    border-radius: 4px;">
+  <div class="card-body">
+    <div class="table-responsive">
+    <table class="table table-hover" id="datatable_files">
+  <thead style="background-color: dodgerblue;
+    color: white">
+    <tr style="text-align: center">
+      <th>Name</th>
+      <th>Zip File</th>
+      <th>Pdf File</th>
+      <th>Xlsx File</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @file_resources.each do |file_resource| %>
+      <tr style="text-align:center">
+        <td><%= file_resource.name %></td>
+        <td><%= link_to 'Download Zip', download_file_resource_path(file_resource.id), target: "_self",class: 'btn btn-sm btn-success', style: 'color: white' %></td>
+      <td><%= link_to 'Download Pdf', pet_report_file_resource_path(file_resource.id,format: :pdf), class: 'btn btn-sm btn-primary', style: 'color: white', target: "blank" %></td>
+
+      <td><%= link_to 'Download as .xlsx', product_report_xlsx_file_resource_path(file_resource.id,format: :xlsx), class: 'btn btn-sm btn-info', style: 'color: white', target: "blank" %></td>
+        <td><%= link_to 'Destroy', file_resource, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger', style: 'color: white' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+</div>
+</div>
+<br>
+
+<%= link_to 'New File Resource', new_file_resource_path, class: 'btn btn-sm btn-success', style: 'color: white' %>

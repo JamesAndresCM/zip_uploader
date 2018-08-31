@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <%= wicked_pdf_stylesheet_link_tag "pdf" -%>
+</head>
+<body>
+<div id="content">
+  <h3 style="border: 1px solid #ccc;
+      color: black;
+      text-align: center; border-radius: 4px">Pet PDF</h3>
+  <br>
+  <br>
+    <div class="card">
+      <div class="card-header">
+      <b> Fecha Creación: </b><%= @file_resource.created_at.strftime("%d/%m/%Y")%>
+      </div>
+      <div class="card-header text-capitalize">
+        <b>Nombre Archivo :</b> <%= @file_resource.name %>
+      </div>
+      <div class="card-header text-capitalize">
+        <b>Nombre Pet :</b> <%= @file_resource.pet.name %>
+      </div>
+      <div class="card-header text-capitalize">
+        <b>Edad Pet :</b> <%= @file_resource.pet.age %> Años
+      </div>
+      <div class="card-header text-capitalize">
+        <b>Color Pet :</b> <%= @file_resource.pet.color %>
+      </div>
+    </div>
+</div>
+<div>
+</div>
+</body>
+</html>

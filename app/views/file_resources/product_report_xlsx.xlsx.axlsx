@@ -1,0 +1,13 @@
+wb = xlsx_package.workbook
+wb.styles do |style|
+  blue_cell = style.add_style :bg_color => "4a86e8", :fg_color => "FF", :sz => 14, :alignment => { :horizontal=> :center }
+
+    wb.add_worksheet(name: "Products") do |sheet|
+      sheet.add_row ["Product Code", "Descripcion", "Cantidad", "Valor"]
+      sheet.row_style 0, blue_cell
+      sheet.column_widths 18,18,14
+      @file_resource.products.each do |product|
+      sheet.add_row [product.code, product.descripcion, product.quantity,product.valor]
+    end
+  end
+end

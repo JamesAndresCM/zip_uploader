@@ -1,0 +1,26 @@
+<div class="card mt-5 col-md-6" style="margin: 0 auto;">
+<div class="card-body">
+<%= form_with(model: file_resource, local: true, multipart: true) do |form| %>
+  <% if file_resource.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(file_resource.errors.count, "error") %> prohibited this file_resource from being saved:</h2>
+
+      <ul>
+      <% file_resource.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.file_field :name, required: true, class: 'form-control' %>
+  </div>
+
+  <div class="actions" style="text-align: center">
+    <%= form.submit class: 'mt-2 btn btn-sm btn-success' %>
+  </div>
+<% end %>
+</div>
+</div>
