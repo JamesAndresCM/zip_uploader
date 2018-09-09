@@ -96,9 +96,6 @@ class FileResourcesController < ApplicationController
   # DELETE /file_resources/1
   # DELETE /file_resources/1.json
   def destroy
-    #elimino zip + folder
-    delete_file(@file_resource.name)
-
     @file_resource.destroy
     respond_to do |format|
       format.html { redirect_to file_resources_url, notice: 'File resource was successfully destroyed.' }
